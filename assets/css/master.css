@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to bottom, rgb(3, 151, 137) 15%, rgb(217, 220, 213) 15%);
+}
+
+#root{
+  display: flex;
+
+  width: 85%;
+  height: 90%;
+  background-color: white;
+}
+
+div.side-left {
+  background-color: rgb(123, 255, 255);
+  height: 100%;
+  width: 30%;
+}
+
+div.side-left .nav{
+  display: flex;
+  justify-content: space-between;
+
+  align-items: center;
+  border-right: 1px solid rgb(177, 177, 177);
+}
+
+div .nav .account{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+div .nav .account-information p{
+  font-weight: bold;
+  padding-left: 5px;
+}
+
+img{
+  width: 40px;
+  height: 40px;
+}
+
+div .nav .controls i{
+  padding-right: 15px;
+  color: rgb(177, 177, 177);
+}
+
+div.side-left .notification{
+  display: flex;
+  align-items: center;
+
+  padding-left: 15px;
+  background-color: rgb(142, 218, 252);
+  height: 10%;
+}
+
+div.side-left .notification i{
+  color: rgb(142, 218, 252);
+  border-radius: 30px;
+  padding: 8px;
+  background-color: rgb(255, 255, 255);
+}
+
+div.side-left .notification > div {
+  padding-left: 5px;
+}
+
+div.side-left .notification .text-notification{
+  font-size: 12px;
+  font-weight: bold;
+  padding-bottom: 3px;
+}
+
+div.side-left .notification .desktop{
+  font-size: 12px;
+  color: rgb(96, 122, 135);
+  text-decoration: underline;
+}
+
+div.side-left .search{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgb(250, 250, 250);
+  height: 7%;
+}
+
+div.side-left .search button i{
+  color: rgb(215, 210, 214);
+}
+
+div.side-left .search button {
+  background-color: rgb(255, 255, 255);
+  height: 70%;
+  width: 20%;
+  border: 1px solid rgb(215, 210, 214);
+}
+
+div.side-left .search input {
+  background-color: rgb(255, 255, 255);
+  height: 70%;
+  width: 70%;
+  border: 1px solid rgb(215, 210, 214);
+  padding: 5px;
+}
+
+div.side-left .contacts{
+  background-color: rgb(255, 255, 255);
+  height: 75%;
+  overflow-y: scroll;
+}
+
+div.side-left .contact{
+  display: flex;
+  justify-content: space-between;
+
+  padding-top: 10px;
+}
+
+div.side-left .contacts .left{
+  display: flex;
+
+  padding-left: 10px;
+}
+
+div.side-left .contacts .left .info-contact p{
+  padding-left: 10px;
+  font-size: 12px;
+}
+
+div.side-left .contacts .left .info-contact p.name-contact{
+  font-weight: bold;
+}
+
+div.side-left .contacts .left .info-contact p.messagge-contact{
+  color: grey;
+}
+
+span.date{
+  color: grey;
+  padding: 0 5px;
+  font-size: 12px;
+}
+
+
+div.nav {
+  background-color: rgb(234, 234, 234);
+  height: 8%;
+}
+
+div.side-right {
+  height: 100%;
+  width: 70%;
+}
+
+div.side-right .nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+div.side-right .background{
+  background-image: url("../img/mine.jpg");
+  background-size: cover;
+  height: 84%;
+  overflow-y: scroll;
+  padding: 30px;
+}
+
+div.side-right .background .chat > p{
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 10px;
+  width: 30%;
+  margin-bottom: 20px;
+}
+
+
+div.side-right .background .chat .send{
+  margin-left: auto;
+  padding: 5px;
+  background-color: rgb(213, 249, 187);
+}
+
+div.side-right .background .chat span.date,
+div.side-right .background .chat span.date{
+  align-self: flex-end;
+}
+
+div.side-right .background .chat .received{
+  padding: 5px;
+  background-color: rgb(255, 255, 255);
+}
+
+div.side-right .message-area{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  background-color: rgb(234, 234, 234);
+  height: 8%;
+}
+
+div.side-right .message-area input{
+  width: 80%;
+  height: 80%;
+  border-radius: 10px;
+  border: 1px solid rgb(215, 210, 214);
+  color: rgb(215, 210, 214);
+  padding-left: 5px;
+}
+
+div.side-right .message-area input::placeholder{
+  color: rgb(215, 210, 214);
+}
+
+div.side-right .message-area i{
+  color: rgb(118, 114, 111);
+}
+
+i {
+  cursor: pointer;
+}
