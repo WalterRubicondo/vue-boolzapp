@@ -36,11 +36,11 @@
           <input type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
         </div>
         <div class="contacts">
-          <div class="contact" v-for="info in contacts">
+          <div class="contact" v-for="(info, i) in contacts" @click="open_chat(i)" :class="(i == chat) ? 'active' : '' "  >
             <div class="left">
-              <img :src="'./assets/img/' +info.avatar+ '.jpg'" alt="">
+              <img :src="'./assets/img/avatar' +info.avatar+ '.jpg'" :alt="info.name">
               <div class="info-contact">
-                <p class="name-contact"> {{ info.name }} </p>
+                <p class="name-contact"> {{ info.name }}</p>
                 <p class="messagge-contact"> Ciao </p>
               </div>
             </div>
@@ -53,9 +53,9 @@
       <div class="side-right">
         <div class="nav">
           <div class="account">
-            <img src="./assets/img/_1.jpg" alt="">
+            <img :src="'./assets/img/avatar' +contacts[chat].avatar+ '.jpg'" alt="">
             <div class="account-information">
-              <p>Michele</p>
+              <p>{{contacts[chat].name}}</p>
               <span class="date">Ultimo accesso oggi alle ore GG/MM/AAAA oo:mm:ss </span>
             </div>
           </div>
@@ -66,9 +66,9 @@
           </div>
         </div>
         <div class="background">
-          <div class="chat" v-for="(message, i) in contacts[0].messages">
-              <p :class="(contacts[0].messages[i].status == 'received' ? 'received' : 'send')"
-              > {{ message.text }} <span class="date">Data</span></p>
+          <div class="chat">
+              <p v-for="(message, i) in contacts[chat].messages" :class="(contacts[chat].messages[i].status == 'received' ? 'received' : 'send')"
+              > {{ message.text }} <span class="date">{{ message.date }}</span></p>
           </div>
         </div>
         <div class="message-area">

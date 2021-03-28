@@ -86,5 +86,11 @@ var app = new Vue ({
     		],
     	},
     ],
+    chat: 0,
+  },
+  methods: {
+    open_chat: function (i) {
+    this.chat = i;
+    }
   },
 });

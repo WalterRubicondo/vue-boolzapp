@@ -235,3 +235,11 @@ div.side-right .message-area i{
 i {
   cursor: pointer;
 }
+
+.active {
+  background-color: #E9EBEB;
+}
+
+.contact:hover{
+  background-color: #f4f5f5;
+}
