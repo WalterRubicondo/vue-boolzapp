@@ -73,13 +73,14 @@
         </div>
         <div class="message-area">
           <i class="far fa-smile"></i>
-          <input type="text" name="" value="" placeholder="Scrivi un messaggio">
+          <input type="text" name="" value="" placeholder="Scrivi un messaggio" @keyup.enter="send_msg" v-model="send">
           <i class="fas fa-paper-plane"></i>
           <i class="fas fa-microphone"></i>
         </div>
       </div>
     </div>
-
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js" integrity="sha512-0fcCRl828lBlrSCa8QJY51mtNqTcHxabaXVLPgw/jPA5Nutujh6CbTdDgRzl9aSPYW/uuE7c4SffFUQFBAy6lg==" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="./assets/js/main.js" charset="utf-8"></script>
   </body>

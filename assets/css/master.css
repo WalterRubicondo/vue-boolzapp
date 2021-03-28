@@ -220,7 +220,6 @@ div.side-right .message-area input{
   height: 80%;
   border-radius: 10px;
   border: 1px solid rgb(215, 210, 214);
-  color: rgb(215, 210, 214);
   padding-left: 5px;
 }
 
@@ -237,6 +236,10 @@ i {
 }
 
 .active {
+  background-color: #E9EBEB;
+}
+
+.contact.active:hover {
   background-color: #E9EBEB;
 }
 
