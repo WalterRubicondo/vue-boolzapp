@@ -179,59 +179,64 @@ div.side-right .background{
   padding: 30px;
 }
 
-div.side-right .background .chat > p{
+
+div.side-right .background > div:hover .fa-angle-down{
+  display: block;
+}
+
+div.side-right .background .chat i{
+  display: none;
+  position: absolute;
+  right: 15px;
+}
+
+div.side-right .background .chat {
   display: flex;
   flex-direction: column;
 
-  position: relative;
-  border-radius: 10px;
-  width: 30%;
-  margin-bottom: 20px;
-}
-
-div.side-right .background .chat > p i{
-  position: absolute;
-  right: 10px;
-  display: none;
-}
-
-.chat > ul{
-  cursor: pointer;
-  display: block;
-  z-index: 1;
-  list-style: none;
-  background-color: rgb(255, 255, 255);
-  position: absolute;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-.chat > ul li{
-  padding: 10px 15px;
-}
-
-.chat > ul li:hover{
-  background-color: rgb(200, 200, 200);
-}
-
-
-div.side-right .background p:hover .fa-angle-down{
-  display: block;
-}
-
-div.side-right .background .chat .send{
-  margin-left: auto;
   padding: 5px;
-  background-color: rgb(213, 249, 187);
+  width: 30%;
+  position: relative;
+  margin: 20px;
 }
 
-div.side-right .background .chat span.date,
-div.side-right .background .chat span.date{
+div.side-right .background .chat > p{
+  width: 95%;
+}
+
+div.side-right .background .chat .date {
   align-self: flex-end;
 }
 
-div.side-right .background .chat .received{
-  padding: 5px;
+div.side-right .background .send{
+  margin-left: auto;
+  background-color: rgb(213, 249, 187);
+}
+
+
+div.side-right .background .received{
   background-color: rgb(255, 255, 255);
+  margin-right: auto;
+}
+
+.chat div.option-msg{
+  cursor: pointer;
+  display: block;
+  z-index: 1;
+  width: 50%;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.chat div.option-msg p{
+  padding: 10px 5px;
+}
+
+.chat div.option-msg p:hover{
+  background-color: rgb(200, 200, 200);
 }
 
 div.side-right .message-area{

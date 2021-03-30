@@ -56,11 +56,11 @@
       </div>
       <div class="side-right">
         <div class="nav">
-          <div class="account">
+          <div class="account" >
             <img :src="'./assets/img/avatar' +contacts[chat].avatar+ '.jpg'" alt="">
             <div class="account-information">
               <p>{{contacts[chat].name}}</p>
-              <span class="date">Ultimo accesso oggi alle ore OO:MM </span>
+              <span class="date">Ultimo accesso oggi alle ore {{ lastAccess(chat) }}</span>
             </div>
           </div>
           <div class="controls">
@@ -70,10 +70,15 @@
           </div>
         </div>
         <div class="background">
-          <div class="chat" v-for="(message, i) in contacts[chat].messages">
-              <p  :class="(contacts[chat].messages[i].status == 'received' ? 'received' : 'send')"
-              > {{ message.text }} <i class="fas fa-angle-down" @click="menu_msg(i)"></i><span class="date">{{ message.date }}</span></p>
-          </div>
+            <div class="chat" v-for="(message, i) in contacts[chat].messages" :class="(contacts[chat].messages[i].status == 'received' ? 'received' : 'send')">
+              <i class="fas fa-angle-down" @click="menu_msg(i)"></i>
+              <p> {{ message.text }} </p>
+              <span class="date">{{ message.date }}</span>
+              <div v-if="show && i == menuIndex" class="option-msg">
+                <p>Message Info</p>
+                <p @click="deleteMsg(i)">Delete Message</p>
+              </div>
+            </div>
         </div>
         <div class="message-area">
           <i class="far fa-smile"></i>
