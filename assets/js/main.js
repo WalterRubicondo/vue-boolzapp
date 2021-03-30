@@ -88,15 +88,15 @@ var app = new Vue ({
     ],
     chat: 0,
     send: "",
+    searchContact: "",
   },
   methods: {
     open_chat: function (i) {
     this.chat = i;
     },
-
     send_msg: function () {
       let obj = {
-        date: dayjs().format('DD/MM/YYYY HH:MM:ss'),
+        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
         text: this.send,
         status: 'sent',
       }
@@ -104,12 +104,12 @@ var app = new Vue ({
       this.send = "";
       setTimeout(() => {
         let obj2 = {
-          date: dayjs().format('DD/MM/YYYY HH:MM:ss'),
+          date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
           text: 'Ok',
           status: 'received',
         }
         this.contacts[this.chat].messages.push(obj2);
       }, 1000);
-    }
+    },
   },
 });

@@ -174,7 +174,6 @@ div.side-right .nav{
 
 div.side-right .background{
   background-image: url("../img/mine.jpg");
-  background-size: cover;
   height: 84%;
   overflow-y: scroll;
   padding: 30px;
@@ -184,11 +183,40 @@ div.side-right .background .chat > p{
   display: flex;
   flex-direction: column;
 
+  position: relative;
   border-radius: 10px;
   width: 30%;
   margin-bottom: 20px;
 }
 
+div.side-right .background .chat > p i{
+  position: absolute;
+  right: 10px;
+  display: none;
+}
+
+.chat > ul{
+  cursor: pointer;
+  display: block;
+  z-index: 1;
+  list-style: none;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.chat > ul li{
+  padding: 10px 15px;
+}
+
+.chat > ul li:hover{
+  background-color: rgb(200, 200, 200);
+}
+
+
+div.side-right .background p:hover .fa-angle-down{
+  display: block;
+}
 
 div.side-right .background .chat .send{
   margin-left: auto;
