@@ -198,6 +198,7 @@ div.side-right .background .chat {
   width: 30%;
   position: relative;
   margin: 20px;
+  border-radius: 5px;
 }
 
 div.side-right .background .chat > p{

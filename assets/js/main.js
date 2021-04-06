@@ -89,8 +89,7 @@ var app = new Vue ({
     chat: 0,
     send: "",
     searchContact: "",
-    show: false,
-    menuIndex: -1,
+    menuIndex: null,
   },
   methods: {
     open_chat: function (i) {
@@ -98,12 +97,19 @@ var app = new Vue ({
     },
     lastAccess: function (chat) {
       const messages = this.contacts[chat].messages;
-      const lastIndex = messages.length - 1;
-      return messages[lastIndex].date;
+      if (messages.length) {
+        const lastIndex = messages.length - 1;
+        return messages[lastIndex].date;
+      } else {
+        return '';
+      }
     },
     menu_msg: function (i) {
-      this.menuIndex = i;
-      this.show = !this.show;
+      if (this.menuIndex == i) {
+        this.menuIndex = null;
+      } else {
+        this.menuIndex = i;
+      }
     },
     deleteMsg: function (i) {
       this.contacts[this.chat].messages.splice(i, 1);
@@ -112,7 +118,7 @@ var app = new Vue ({
     send_msg: function () {
       const indexChat = this.chat;
       let obj = {
-        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+        date: dayjs().format('HH:mm'),
         text: this.send,
         status: 'sent',
       }
@@ -120,7 +126,7 @@ var app = new Vue ({
       this.send = "";
       setTimeout(() => {
         let obj2 = {
-          date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+          date: dayjs().format('HH:mm'),
           text: 'Ok',
           status: 'received',
         }

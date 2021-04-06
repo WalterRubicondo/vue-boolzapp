@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./assets/css/master.css">
   </head>
   <body>
-    <div id="root">
+    <div id="root" @click="menu_msg">
       <div class="side-left">
         <div class="nav">
           <div class="account">
@@ -45,11 +45,11 @@
               <img :src="'./assets/img/avatar' +info.avatar+ '.jpg'" :alt="info.name">
               <div class="info-contact">
                 <p class="name-contact"> {{ info.name }}</p>
-                <p class="messagge-contact"> {{info.messages[info.messages.length - 1].text}} </p>
+                <p class="messagge-contact" v-if="info.messages.length"> {{info.messages[info.messages.length - 1].text}} </p>
               </div>
             </div>
             <div class="right">
-              <span class="date"> {{info.messages[info.messages.length - 1].date}} </span>
+              <span class="date" v-if="info.messages.length"> {{info.messages[info.messages.length - 1].date}} </span>
             </div>
           </div>
         </div>
@@ -71,10 +71,10 @@
         </div>
         <div class="background">
             <div class="chat" v-for="(message, i) in contacts[chat].messages" :class="(contacts[chat].messages[i].status == 'received' ? 'received' : 'send')">
-              <i class="fas fa-angle-down" @click="menu_msg(i)"></i>
+              <i class="fas fa-angle-down" @click.stop="menu_msg(i)"></i>
               <p> {{ message.text }} </p>
               <span class="date">{{ message.date }}</span>
-              <div v-if="show && i == menuIndex" class="option-msg">
+              <div v-if="i == menuIndex" class="option-msg">
                 <p>Message Info</p>
                 <p @click="deleteMsg(i)">Delete Message</p>
               </div>
