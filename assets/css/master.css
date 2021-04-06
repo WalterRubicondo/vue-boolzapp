@@ -147,6 +147,10 @@ div.side-left .contacts .left .info-contact p.name-contact{
 
 div.side-left .contacts .left .info-contact p.messagge-contact{
   color: grey;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 160px;
+  white-space: nowrap;
 }
 
 span.date{
@@ -203,6 +207,7 @@ div.side-right .background .chat {
 
 div.side-right .background .chat > p{
   width: 95%;
+  word-break: break-all;
 }
 
 div.side-right .background .chat .date {
